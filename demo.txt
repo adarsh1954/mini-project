@@ -1,0 +1,43 @@
+package entity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+@Entity
+@Table(name="student")
+public class Student {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	int regNo;
+	String Name;
+	public int grtRegNo() {
+		return regNo;
+	}
+	public void setGegNo(int RegNo) {
+		this.regNo=regNo;
+	}
+	public String grtName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name=name;
+	}
+	public Student(int regNo,String name) {
+		super();
+		this.regNo=regNo;
+		Name=name;
+	}
+	public Student(){
+		
+	}
+	@Override
+	public String toString() {
+		return "Student{"+
+	    "regNo="+regNo+
+	    ",name='"+Name+'\"+
+	    '}';
+	}
+
+}
+
